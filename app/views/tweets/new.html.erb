@@ -1,0 +1,13 @@
+<h1>Tweetの権限を変更する</h1>
+<% @tweets.each do |tweet|%>
+  <form action = "/tweets/<%= tweet.id%>" method = "post">
+    <input type = "text" name = "text" value = "<%= tweet.text%>">
+    <input type = "hidden" name = "authority" value = false>
+    <% if tweet.authority == true%>
+      <input type = "checkbox" name = "authority" value = true checked="checked">
+    <% else %>
+      <input type = "checkbox" name = "authority" value = true>
+    <% end %>
+    <input type = "submit" value = "アップデート">
+  </form>
+<% end %>

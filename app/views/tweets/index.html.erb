@@ -1,0 +1,13 @@
+<div>
+  <h1>BoolApp</h1>
+  <a href = "/tweets/new">投稿権限変更</a>
+  <form action = "/tweets" method = "post">
+      <input type = "text" name = "text">
+      <input type = "hidden" name = "authority" value = false>
+      <input type = "checkbox" name = "authority" value = true></input>
+      <input type = "submit" value = "投稿">
+  </form>
+  <% @tweets.each do |tweet|%>
+    <p><%= tweet.text%></p>
+  <% end  %>
+</div>
